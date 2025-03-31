@@ -103,5 +103,5 @@ jobs:
           echo "About to commit changes"
           git commit -m "Auto-generated TypeScript interfaces"
           BRANCH=$(git rev-parse --abbrev-ref HEAD)
-          echo "About to push changes to $BRANCH
+          echo "About to push changes to $BRANCH"
           git push -u origin HEAD:$BRANCH
