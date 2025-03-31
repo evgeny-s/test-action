@@ -98,11 +98,11 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          if [[ -n "$(git status --porcelain)" ]]; then
+#          if [[ -n "$(git status --porcelain)" ]]; then
             echo "test thing" > check1.txt
             git add .
             echo "About to commit changes"
             git commit -m "Auto-generated TypeScript interfaces"
             echo "About to push changes to $(git branch --show-current)"
             git push -u origin $(git branch --show-current)
-          fi
+#          fi
