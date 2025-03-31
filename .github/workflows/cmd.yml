@@ -102,6 +102,6 @@ jobs:
           git add .
           echo "About to commit changes"
           git commit -m "Auto-generated TypeScript interfaces"
-          echo "About to push changes to $(git branch --show-current)"
           TARGET_BRANCH=${GITHUB_HEAD_REF:-$(git rev-parse --abbrev-ref HEAD)}
+          echo "About to push changes to $TARGET_BRANCH"
           git push -u origin "$TARGET_BRANCH"
