@@ -109,5 +109,5 @@ jobs:
           echo "PR Number: $PR_NUMBER"
           echo "Target Branch: $TARGET_BRANCH"
 
-#          git commit -m "Auto-generated TypeScript interfaces"
-#          git push -u origin "$TARGET_BRANCH"
+          git commit -m "Auto-generated TypeScript interfaces"
+          git push -u origin "$TARGET_BRANCH"
