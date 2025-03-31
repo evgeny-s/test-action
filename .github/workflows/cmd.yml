@@ -98,10 +98,9 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          echo "test thing" > check3.txt
+          echo "test thing" > check4.txt
           git add .
           echo "About to commit changes"
           git commit -m "Auto-generated TypeScript interfaces"
-          TARGET_BRANCH=${GITHUB_HEAD_REF:-$(git rev-parse --abbrev-ref HEAD)}
-          echo "About to push changes to $TARGET_BRANCH"
-          git push -u origin "$TARGET_BRANCH"
+          echo "About to push changes to ${GITHUB_HEAD_REF}"
+          git push -u origin HEAD:${GITHUB_HEAD_REF}
