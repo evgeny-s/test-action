@@ -98,7 +98,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          echo "test thing" > check4.txt
+          echo "test thing" > check5.txt
           git add .
           echo "About to commit changes"
           TARGET_BRANCH=${GITHUB_HEAD_REF:-$(git rev-parse --abbrev-ref HEAD)}
