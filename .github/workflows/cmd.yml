@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   is-org-member:
-    if: startsWith(github.event.comment.body, '/cmd')
+#    if: startsWith(github.event.comment.body, '/cmd')
     runs-on: ubuntu-latest
     steps:
       - name: Check Permissions
@@ -36,7 +36,7 @@ jobs:
             echo "❌ User $COLLABORATOR doesn't have enough permission: "$permission_level". Failing..." && exit 1
           fi
   acknowledge:
-    if: startsWith(github.event.comment.body, '/cmd')
+#    if: startsWith(github.event.comment.body, '/cmd')
     needs: ["is-org-member"]
     runs-on: ubuntu-latest
     steps:
