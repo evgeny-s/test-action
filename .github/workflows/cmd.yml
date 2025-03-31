@@ -98,7 +98,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          echo "test thing" > check2.txt
+          echo "test thing" > check3.txt
           git add .
           echo "About to commit changes"
           git commit -m "Auto-generated TypeScript interfaces"
