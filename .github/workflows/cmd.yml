@@ -3,6 +3,9 @@ name: PR comment bot (/cmd)
 on:
   issue_comment:
     types: [ created ]
+  push:
+    branches:
+      - feature/test*
 
 permissions:
   contents: write
