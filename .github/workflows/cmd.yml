@@ -115,4 +115,4 @@ jobs:
             })
 
       - name: Generating summary report
-        run: echo "$TARGET_BRANCH was successfully merged for PR - $PR_NUMBER" >> $GITHUB_STEP_SUMMARY
+        run: echo "Branch - $TARGET_BRANCH was successfully merged for PR - $PR_NUMBER" >> $GITHUB_STEP_SUMMARY
