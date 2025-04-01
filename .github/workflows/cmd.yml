@@ -72,8 +72,8 @@ jobs:
           echo "test thing" > check8.txt
           git add .
           echo "About to commit changes"
-          PR_NUMBER=$(jq --raw-output .issue.number "$GITHUB_EVENT_PATH")
-          TARGET_BRANCH=$(gh pr view "$PR_NUMBER" --json headRefName -q .headRefName)
+          echo "PR_NUMBER=$(jq --raw-output .issue.number "$GITHUB_EVENT_PATH")" >> $GITHUB_ENV
+          echo "TARGET_BRANCH=$(gh pr view "$PR_NUMBER" --json headRefName -q .headRefName)" >> $GITHUB_ENV
           jq '.' $GITHUB_EVENT_PATH
           
           echo "PR Number: $PR_NUMBER"
