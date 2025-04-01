@@ -60,7 +60,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.issue.pull_request.head.ref }}
+          ref: refs/pull/${{ github.event.issue.number }}/head
 
       - name: Configure Git
         run: |
@@ -72,7 +72,7 @@ jobs:
         run: |
           echo "Head red: ${{ github.event.issue.pull_request.head.ref }}"
           echo "Current head: $(git rev-parse HEAD)"
-          echo "test thing" > check15.txt
+          echo "test thing" > check16.txt
           git add .
           echo "About to commit changes"
           PR_NUMBER=$(jq --raw-output .issue.number "$GITHUB_EVENT_PATH")
