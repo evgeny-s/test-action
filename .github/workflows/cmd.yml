@@ -70,8 +70,9 @@ jobs:
 
       - name: Commit and push changes
         run: |
+          echo "Head red: ${{ github.event.issue.pull_request.head.ref }}"
           echo "Current head: $(git rev-parse HEAD)"
-          echo "test thing" > check14.txt
+          echo "test thing" > check15.txt
           git add .
           echo "About to commit changes"
           PR_NUMBER=$(jq --raw-output .issue.number "$GITHUB_EVENT_PATH")
