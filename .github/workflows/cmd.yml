@@ -66,10 +66,11 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          echo "Git configured!" >> $GITHUB_STEP_SUMMARY
 
       - name: Commit and push changes
         run: |
-          echo "test thing" > check9.txt
+          echo "test thing" > check10.txt
           git add .
           echo "About to commit changes"
           PR_NUMBER=$(jq --raw-output .issue.number "$GITHUB_EVENT_PATH")
@@ -87,6 +88,8 @@ jobs:
           
           echo "PR_NUMBER=$PR_NUMBER" >> $GITHUB_ENV
           echo "TARGET_BRANCH=$TARGET_BRANCH" >> $GITHUB_ENV
+          
+          echo "Branch - $TARGET_BRANCH was successfully merged for PR - $PR_NUMBER" >> $GITHUB_STEP_SUMMARY
 
       - name: Add confused reaction on failure
         uses: actions/github-script@v7
