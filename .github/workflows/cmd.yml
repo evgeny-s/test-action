@@ -69,7 +69,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          echo "test thing" > check7.txt
+          echo "test thing" > check8.txt
           git add .
           echo "About to commit changes"
           PR_NUMBER=$(jq --raw-output .issue.number "$GITHUB_EVENT_PATH")
